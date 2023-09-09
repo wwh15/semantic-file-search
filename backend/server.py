@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 
 def get_db_connection():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect('pod_data.db')
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -24,10 +24,10 @@ def process_string():
     input = data.get('inputString', '')
 
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts').fetchall()
+    posts = conn.execute('SELECT * FROM table').fetchall()
     conn.close()
     
-    return jsonify({'result': posts[0][3]})
+    return jsonify({'result': posts[2][2]})
     
 
     # return jsonify({'result': input})

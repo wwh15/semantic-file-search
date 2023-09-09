@@ -1,19 +1,19 @@
 import sqlite3
 
-connection = sqlite3.connect('database.db')
+connection = sqlite3.connect('hello.db')
 
 
-with open('schema.sql') as f:
+with open('test.sql') as f:
     connection.executescript(f.read())
 
 cur = connection.cursor()
 
-insert_query = """INSERT INTO posts
-                    (title, content)
-                    VALUES
-                    ('hello','yuh')"""
+# insert_query = """INSERT INTO mytable
+#                     (title, content)
+#                     VALUES
+#                     ('hello','yuh)"""
 
-cur.execute(insert_query)
+# cur.execute(insert_query)
 
 connection.commit()
 connection.close()
