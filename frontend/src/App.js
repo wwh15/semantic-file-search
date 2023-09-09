@@ -8,7 +8,7 @@ export default function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/add_one', {
+      const response = await fetch('/process_string', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

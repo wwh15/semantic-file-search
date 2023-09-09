@@ -10,12 +10,14 @@ x = datetime.datetime.now()
 # Initializing flask app
 app = Flask(__name__)
 
-@app.route('/add_one', methods=['POST'])
+@app.route('/process_string', methods=['POST'])
 
-def add_one():
+def process_string():
     data = request.get_json()
     input = data.get('inputString', '')
     
+    
+
     return jsonify({'result': input})
  
 # cors = CORS(app)
