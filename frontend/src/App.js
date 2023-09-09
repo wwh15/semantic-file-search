@@ -19,7 +19,7 @@ export default function App() {
     fetch("/data").then((res) =>
         res.json().then((data) => {
             // Setting a data from api
-            setdata({
+            setData({
                 name: data.Name,
                 age: data.Age,
                 date: data.Date,
