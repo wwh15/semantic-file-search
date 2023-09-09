@@ -27,7 +27,7 @@ def process_string():
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     
-    return jsonify({'result': posts[1][1]})
+    return jsonify({'result': posts[0][3]})
     
 
     # return jsonify({'result': input})
