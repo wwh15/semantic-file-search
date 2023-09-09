@@ -40,6 +40,7 @@ export default function App() {
             <p>{data.age}</p>
             <p>{data.date}</p>
             <p>{data.programming}</p>
+            
 
         </header>
     </div>
