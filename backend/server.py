@@ -14,9 +14,9 @@ app = Flask(__name__)
 
 def add_one():
     data = request.get_json()
-    number = data.get('number', 0)
-    result = number + 1
-    return jsonify({'result': result})
+    input = data.get('inputString', '')
+    
+    return jsonify({'result': input})
  
 # cors = CORS(app)
 # app.config['CORS_HEADERS'] = 'Content-Type'

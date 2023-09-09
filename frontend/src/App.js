@@ -13,7 +13,7 @@ export default function App() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ number: parseInt(inputValue) }),
+        body: JSON.stringify({ inputString: inputValue }),
       });
 
       if (response.ok) {
@@ -26,22 +26,6 @@ export default function App() {
   };
 
   
-//   // Using useEffect for single rendering
-//   React.useEffect(() => {
-//     // Using fetch to fetch the api from
-//     // flask server it will be redirected to proxy
-//     fetch("/data").then((res) =>
-//         res.json().then((data) => {
-//             // Setting a data from api
-//             setData({
-//                 name: data.Name,
-//                 age: data.Age,
-//                 date: data.Date,
-//                 programming: data.programming,
-//             });
-//         })
-//     );
-// }, []);
 
   return (
     
@@ -49,11 +33,12 @@ export default function App() {
         <h1>Semantic File Search Engine</h1>
         <form onSubmit={handleSubmit}>
           <input
-            type="number"
-            placeholder="Enter a number"
+            type="text"
+            placeholder="Enter a search term"
             value = {inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
+          <button type="submit">Process</button>
         </form>
 
         {result != "" && <p>Result: {result}</p>}
