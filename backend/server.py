@@ -24,10 +24,10 @@ def process_string():
     input = data.get('inputString', '')
 
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM table').fetchall()
+    posts = conn.execute('SELECT * FROM test').fetchall()
     conn.close()
     
-    return jsonify({'result': posts[2][2]})
+    return jsonify({'result': posts[3][0]})
     
 
     # return jsonify({'result': input})
