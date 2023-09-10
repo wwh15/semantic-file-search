@@ -25,6 +25,7 @@ def process_string():
     lst = []
 
     conn = get_db_connection()
+    # Using test file 
     posts = conn.execute('SELECT * FROM test').fetchall()
     
     conn.close()
