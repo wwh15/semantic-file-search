@@ -37,9 +37,9 @@ def process_string():
                 lst.append(posts[i][0])
     
     if len(lst) == 0:
-        return jsonify({'result': ["No Matches"]})
+        return jsonify({'output': ["No Matches"]})
     else:
-        return jsonify({'result': lst})
+        return jsonify({'output': lst})
         
  
      
