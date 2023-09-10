@@ -38,7 +38,7 @@ export default function App() {
   return (
     <div className = "App"> 
         {/*renders heading for component*/}
-        <h1> Semantic File Search Engine </h1> 
+        <h1> Semantic Podcast Search Engine </h1> 
 
         {/*creates form element onSubmit, when form is submitted handleSubmit called*/}
         <form onSubmit = {handleSubmit}> 
