@@ -5,10 +5,11 @@ import React from "react"
 export default function App() {
 
   const [inputValue, setInputValue] = React.useState("") 
+  const [matches, setMatches] = React.useState(0)
   const [result, setResult] = React.useState([]) 
 
   // resultArr is updated when result is updated
-  const resultArr = result.map(item => <p>{item}</p>) // creates array of paragraph elements, each item in result is its own paragraph
+  const resultArr = result.map(item => <p>{item.Name}</p>) // creates array of paragraph elements, each item in result is its own paragraph
 
   // async function to handle form submission
   const handleSubmit = async (e) => { 
@@ -20,7 +21,7 @@ export default function App() {
         headers: {
           'Content-Type': 'application/json', // content sent is JSON formatted
         },
-        body: JSON.stringify({ inputString: inputValue }), // sends current value of inputValue
+        body: JSON.stringify({ inputString: inputValue, number: matches }), // sends current value of inputValue
       });
 
       if (response.ok) { // checks if HTTP response is 200-299
@@ -47,6 +48,13 @@ export default function App() {
             placeholder = "Enter a search term"
             value = {inputValue}
             onChange = {(e) => setInputValue(e.target.value)} // updates inputValue when event object (e) {input} is changed
+          />
+          {/* renders number input for how many entries on screen */}
+          <input
+            type = "number"
+            placeholder = "How many entries?"
+            value = {matches}
+            onChange={(e) => setMatches(e.target.value)}
           />
           {/*renders button that submits form*/}
           <button type = "submit"> Process </button>

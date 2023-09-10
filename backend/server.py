@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 
+from transformerTE import *
 
 import datetime
  
@@ -21,25 +22,24 @@ def get_db_connection():
 @app.route('/process_string', methods=['POST'])
 def process_string():
     data = request.get_json()
-    input = (data.get('inputString', ''))
-    lst = []
+    input = data.get('inputString', '')
+    matches = data.get('number', 0)
 
-    conn = get_db_connection()
-    # Using test file 
-    posts = conn.execute('SELECT * FROM test').fetchall()
-    
-    conn.close()
+    results = get_info(input, matches)
 
-    for i in range(len(posts)):
-        if posts[i][0] is not None:
-            charlst = posts[i][0].split(" ")
-            if input in charlst:
-                lst.append(posts[i][0])
+    # conn = get_db_connection()
+    # # Using test file 
+    # posts = conn.execute('SELECT * FROM test').fetchall()
     
-    if len(lst) == 0:
-        return jsonify({'output': ["No Matches"]})
-    else:
-        return jsonify({'output': lst})
+    # conn.close()
+
+    # for i in range(len(posts)):
+    #     if posts[i][0] is not None:
+    #         charlst = posts[i][0].split(" ")
+    #         if input in charlst:
+    #             lst.append(posts[i][0])
+    
+    return jsonify({'output': results})
         
  
      
