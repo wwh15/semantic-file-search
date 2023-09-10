@@ -21,31 +21,25 @@ def get_db_connection():
 @app.route('/process_string', methods=['POST'])
 def process_string():
     data = request.get_json()
-    input = data.get('inputString', '')
+    input = (data.get('inputString', ''))
+    lst = []
 
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM test').fetchall()
+    
     conn.close()
-    
-    return jsonify({'result': posts[3][0]})
-    
 
-    # return jsonify({'result': input})
+    for i in range(len(posts)):
+        if posts[i][0] is not None:
+            charlst = posts[i][0].split(" ")
+            if input in charlst:
+                lst.append(posts[i][0])
     
- 
-# cors = CORS(app)
-# app.config['CORS_HEADERS'] = 'Content-Type'
-# # Route for seeing a data
-# @app.route('/data')
-# def get_time():
- 
-#     # Returning an api for showing in reactjs
-#     return {
-#         'Name':"geek",
-#         "Age":"22",
-#         "Date":x,
-#         "programming":"python"
-#         }
+    if len(lst) == 0:
+        return jsonify({'result': ["No Matches"]})
+    else:
+        return jsonify({'result': lst})
+        
  
      
 # Running app

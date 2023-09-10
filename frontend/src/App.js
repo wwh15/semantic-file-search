@@ -3,7 +3,9 @@ import React from "react"
 export default function App() {
 
   const [inputValue, setInputValue] = React.useState("")
-  const [result, setResult] = React.useState("")
+  const [result, setResult] = React.useState([])
+
+  const resultArr = result.map(item => <p>{item}</p>)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +27,6 @@ export default function App() {
     }
   };
 
-  
 
   return (
     
@@ -41,7 +42,8 @@ export default function App() {
           <button type="submit">Process</button>
         </form>
 
-        {result != "" && <p>Result: {result}</p>}
+
+        {result != "" && <p>Result: {resultArr}</p>}
 
 
     </div>
