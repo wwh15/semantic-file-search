@@ -2,3 +2,35 @@ body {
     margin: 20;
 }
 
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: goldenrod;
+}
+  
+.star-empty {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+  
+.star-fill {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.result-name {
+    margin-bottom: 0; /* Remove the bottom margin */
+}
+.result-rating {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+  
+.rating-value,
+.rating {
+    display: inline-block;
+}
