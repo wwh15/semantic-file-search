@@ -17,7 +17,7 @@ export default function App() {
         {item.Description}
       </p>
       <p>
-        {item.Rating}
+        Rating: {item.Rating}
       </p>
      </div>
      ) // creates array of paragraph elements, each item in result is its own paragraph
