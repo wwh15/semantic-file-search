@@ -1,6 +1,5 @@
 import React from "react"
 
-
 // defines React component App as default export from module
 export default function App() {
 
@@ -9,7 +8,16 @@ export default function App() {
   const [result, setResult] = React.useState([]) 
 
   // resultArr is updated when result is updated
-  const resultArr = result.map(item => <p>{item.Name}</p>) // creates array of paragraph elements, each item in result is its own paragraph
+  const resultArr = result.map(item =>
+     <div className="result">
+      <h1 className="result-name">
+        {item.Name} 
+      </h1>
+      <p className="result-description">
+        {item.Description}
+      </p>
+     </div>
+     ) // creates array of paragraph elements, each item in result is its own paragraph
 
   // async function to handle form submission
   const handleSubmit = async (e) => { 
