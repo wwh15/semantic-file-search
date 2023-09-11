@@ -88,6 +88,7 @@ export default function App() {
   
       <form onSubmit={handleSubmit} className="form"> 
         <input 
+          className="query-input"
           type="text"
           placeholder="Enter a search term"
           value={inputValue}
@@ -95,13 +96,14 @@ export default function App() {
         />
   
         <input
+          className="number-input"
           type="number"
           placeholder="How many entries?"
           value={matches}
           onChange={(e) => setMatches(e.target.value)}
         />
   
-        <button type="submit"> Search </button>
+        <button className="button" type="submit"> Search </button>
       </form>
   
       {/* Renders the results only if result array has items */}

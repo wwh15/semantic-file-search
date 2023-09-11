@@ -23,12 +23,14 @@ body {
 }
 
 .result {
+    margin-left: 10px;
     margin-bottom: 50px;
     border: black 1px solid;
-    padding-left:10px;
+    padding:0px 10px;
 }
 
 .result-name {
+    font-size: 30px;
     margin-bottom: 0; /* Remove the bottom margin */
 }
 .result-rating {
@@ -45,4 +47,48 @@ body {
 
 .form {
     margin-bottom: 20px;
+}
+
+.query-input {
+    padding: 10px;
+    margin: 10px;
+    height: 20px;
+    width: 250px;
+    border:1px solid #eaeaea;
+    outline:none;
+}
+
+.number-input {
+    padding: 10px;
+    margin: 10px;
+    height: 20px;
+    width: 40px;
+    border:1px solid #eaeaea;
+    outline:none;
+}
+
+.button {
+    border-radius: 2px;
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: #757575;
+    cursor: default;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100px;
+    padding: 0 16px;
+    height:36px;
+}
+
+.button:hover{
+    cursor:pointer;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+
+.title {
+    margin-left: 10px;
 }
