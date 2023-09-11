@@ -4,7 +4,7 @@ import React from "react"
 export default function App() {
 
   const [inputValue, setInputValue] = React.useState("") 
-  const [matches, setMatches] = React.useState(0)
+  const [matches, setMatches] = React.useState(10)
   const [result, setResult] = React.useState([]) 
 
 
@@ -18,7 +18,6 @@ export default function App() {
       </div>
     );
   }
-  // resultArr is updated when result is updated
   function Rating({ value }) {
     return (
       <div className="rating">
@@ -30,7 +29,8 @@ export default function App() {
     );
   }
 
-  const resultArr = result.map(item => {
+  // resultArr is updated when result is updated
+    const resultArr = result.map(item => {
     const roundedRating = Math.round(item.Rating * 100) / 100;
     const isRatingValid = !isNaN(roundedRating) && item.Rating !== null;
     
@@ -42,7 +42,7 @@ export default function App() {
             <p className="result-rating">
                 {isRatingValid 
                     ? <>
-                        {roundedRating} <Rating value={roundedRating} />  reviewed by {item.Rating_Volume}
+                        {roundedRating} <Rating value={roundedRating} /> {item.Rating_Volume} Reviews
                       </>
                     : "No reviews"
                 }
@@ -56,6 +56,7 @@ export default function App() {
         </div>
     );
 });// creates array of paragraph elements, each item in result is its own paragraph
+
 
   // async function to handle form submission
   const handleSubmit = async (e) => { 
@@ -83,9 +84,9 @@ export default function App() {
   // JSX return statement, defines component (App) render
   return (
     <div className="App"> 
-      <h1> Semantic Podcast Search Engine </h1> 
+      <h1 className="title"> Semantic Podcast Search Engine </h1> 
   
-      <form onSubmit={handleSubmit}> 
+      <form onSubmit={handleSubmit} className="form"> 
         <input 
           type="text"
           placeholder="Enter a search term"

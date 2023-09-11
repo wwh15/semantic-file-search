@@ -1,5 +1,6 @@
 body {
     margin: 20;
+    font-family: Poppins, sans-serif;
 }
 
 .star {
@@ -20,6 +21,13 @@ body {
     overflow: hidden;
     white-space: nowrap;
 }
+
+.result {
+    margin-bottom: 50px;
+    border: black 1px solid;
+    padding-left:10px;
+}
+
 .result-name {
     margin-bottom: 0; /* Remove the bottom margin */
 }
@@ -33,4 +41,8 @@ body {
 .rating-value,
 .rating {
     display: inline-block;
+}
+
+.form {
+    margin-bottom: 20px;
 }
